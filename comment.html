@@ -3,8 +3,8 @@
         <ul class='list-group '>
                 <li ng-repeat="comment in taskList[index].description track by $index" class='list-group-item borderless' id='last'>
                     <div class="row">
-                            <div class='col-sm-4 square' ng-class='{"blueSquare": comment == active}' ></div>
-                            <div class='col-sm-8 hoverTag'  ng-click='goActiveCom(comment,$index)' >{{comment}}</div>
+                            <div class='col-sm-4 square' ng-class='{"blueSquare": comment == activeCom}' ></div>
+                            <div class='col-sm-8 hoverTag'id='mom' ng-click='goActiveCom(comment,$index)' >{{comment}}</div>
                     </div>
                 </li>
         </ul>
@@ -13,7 +13,7 @@
                 <div class="row">           
                     <div class='col-sm-4 square' style='margin-right:12px;'></div>
                                 <!-- <div class=" col-sm-2"><img width="50" height="50" src="./orange.jpg" alt=""></div> -->
-                    <textarea class="col-lg-8"  type="text" ng-model='newComment' ng-keypress="myFunct($event)"  row='3'>                
+                    <textarea   type="text" ng-model='newComment' ng-keypress="myFunct($event)">                
                 </div>
             </div>
         </div>

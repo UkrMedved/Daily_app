@@ -2,6 +2,7 @@ var app = angular.module('app',['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
         $urlRouterProvider.otherwise('/home');
+        $locationProvider.html5Mode(true);
         $stateProvider
             .state('home', {
                 url: '/home',
@@ -20,7 +21,7 @@ app.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
             
 })
 .controller('firstCtrl',function($scope, $state){
-    $scope.active;
+    $scope.active = 0;
     $scope.title='';
     $scope.taskList = JSON.parse(localStorage.getItem('taskList')) ? JSON.parse(localStorage.getItem('taskList')) : [];
     console.log($scope.taskList)
@@ -51,7 +52,7 @@ app.config(function($stateProvider, $urlRouterProvider,$locationProvider) {
     }
 })
 .controller('secondCtrl', function($scope,$state,$stateParams){
-    if(!$stateParams.id){$state.go('home');}
+    if(!$stateParams.id){$state.go('home');}   
     $scope.index = $stateParams.id;
     $scope.activeCom;
     $scope.place;

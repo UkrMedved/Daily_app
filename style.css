@@ -62,7 +62,6 @@ p:nth-child(2) {
     box-shadow: 1px 0px 15px 0px #000000;
 }
 .column-two {
-    min-height: 60vh;
     box-shadow: 1px 0px 15px 0px #000000;
 }
 .content {
@@ -109,9 +108,17 @@ p:nth-child(2) {
 	height: 50px;
 	background: rgb(10, 10, 99);
 }
+
 .hoverTag:hover{
     cursor: pointer;
 }
 #last:last-child {
     border-bottom: 0 none;
+}
+textarea{
+    height: 50px;
+    width: 80%;
+}
+#mom{
+    width: 80%;
 }
