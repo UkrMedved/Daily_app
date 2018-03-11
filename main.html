@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="column-one">
+            <div class="content">
+                    <h1>Items</h1>
+                    <div class='row'>
+                        <div class="col-md-9">
+                             <input class="form-control" placeholder="Type name here..."  type="text"ng-model='title'>
+                        </div>
+                        <div class="col-md-3">
+                                <button class="btn btn-info  btn-group-justified" ng-click="addTask(title)">Add new</button>
+                        </div>
+                    </div>
+                    <ul class='list-group'>
+                        <li ng-repeat="task in taskList track by $index" ng-class="{'red-border': task.id == active}" class='list-group-item borderless' >
+                            <a ui-sref="home.comments({id: $index})" ng-click="goActive(task)" >{{task.title }}&#160;<span class="badge bd-danger">{{  task.description.length}}</span></a>
+                            <button ng-click="deleteTask(task)" class='btn btn-red pull-right'>Delete</button>
+                        </li>
+                    </ul>
+            </div>  
+        </div>
+    </div>
+    <div class="col-md-6">
+            <div class="column-two">
+                    <div ui-view="comments"></div>
+            </div>
+            
+    </div>
+</div>
